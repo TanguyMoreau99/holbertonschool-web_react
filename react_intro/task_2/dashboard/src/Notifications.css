@@ -1,0 +1,19 @@
+.root-notifications {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.notification-items {
+  border: 2px dashed #e1003c;
+  padding: 20px;
+  background-color: #fff8f8;
+}
+
+.notification-items p {
+  margin: 0;
+  font-size: 14px;
+}
