@@ -1,0 +1,39 @@
+.root-notifications {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.notification-items {
+  position: relative;
+  border: 2px dashed #e1003c;
+  padding: 20px;
+  background-color: #fff8f8;
+}
+
+.notification-items p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.notification-items ul {
+  padding-left: 40px;
+  margin: 10px 0 0 0;
+}
+
+.notification-items li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.notification-items li[data-priority="default"] {
+  color: blue;
+}
+
+.notification-items li[data-priority="urgent"] {
+  color: red;
+}
