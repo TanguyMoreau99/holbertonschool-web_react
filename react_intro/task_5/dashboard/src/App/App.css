@@ -1,0 +1,60 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #e1003c;
+  padding: 20px;
+}
+
+.App-header img {
+  width: 200px;
+  height: 200px;
+}
+
+.App-header h1 {
+  color: #e1003c;
+  margin-left: 20px;
+}
+
+.App-body {
+  padding: 40px;
+  min-height: 300px;
+}
+
+.App-body p {
+  font-size: 18px;
+}
+
+.App-footer {
+  border-top: 3px solid #e1003c;
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+}
+.App-body form {
+  margin-top: 20px;
+}
+
+.App-body label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.App-body input {
+  margin-right: 20px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.App-body button {
+  padding: 5px 15px;
+  background-color: #e1003c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.App-body button:hover {
+  background-color: #c00030;
+}
