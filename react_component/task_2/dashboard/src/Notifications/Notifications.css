@@ -1,0 +1,37 @@
+.Notifications-container {
+  position: relative;
+}
+
+.menuItem {
+  text-align: right;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menuItem p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.Notifications {
+  border: 2px dashed #e1003c;
+  padding: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.Notifications p {
+  margin: 0 0 10px 0;
+}
+
+.Notifications ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+}
+
+.Notifications button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
