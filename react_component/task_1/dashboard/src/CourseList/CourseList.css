@@ -1,0 +1,25 @@
+#CourseList {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+
+#CourseList th,
+#CourseList td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#CourseList thead tr:first-child th {
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+#CourseList thead tr:nth-child(2) th {
+  background-color: #f8f8f8;
+}
+
+#CourseList tbody tr:hover {
+  background-color: #f5f5f5;
+}
