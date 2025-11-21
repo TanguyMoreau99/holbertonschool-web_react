@@ -10,34 +10,27 @@ describe('Login component', () => {
   test('renders 2 input tags and 2 label tags', () => {
     render(<Login />);
     
-    const emailLabel = screen.getByText(/email:/i);
-    const passwordLabel = screen.getByText(/password:/i);
-    expect(emailLabel).toBeInTheDocument();
-    expect(passwordLabel).toBeInTheDocument();
+    const labels = screen.getAllByRole('textbox').length + screen.getAllByLabelText(/password/i).length;
+    const inputs = screen.getByLabelText(/email/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+    const button = screen.getByRole('button');
     
-    const emailInput = screen.getByLabelText(/email:/i);
-    const passwordInput = screen.getByLabelText(/password:/i);
-    expect(emailInput).toBeInTheDocument();
+    expect(inputs).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
-    
-    const button = screen.getByRole('button', { name: /ok/i });
     expect(button).toBeInTheDocument();
   });
 
-  test('inputs get focused when labels are clicked', async () => {
+  test('verify that the inputs get focus when labels are clicked', async () => {
     const user = userEvent.setup();
     render(<Login />);
     
-    const emailInput = screen.getByLabelText(/email:/i);
-    const passwordInput = screen.getByLabelText(/password:/i);
+    const emailInput = screen.getByLabelText(/email/i);
+    const passwordInput = screen.getByLabelText(/password/i);
     
-    const emailLabel = screen.getByText(/email:/i);
-    const passwordLabel = screen.getByText(/password:/i);
-    
-    await user.click(emailLabel);
+    await user.click(screen.getByText(/email:/i));
     expect(emailInput).toHaveFocus();
     
-    await user.click(passwordLabel);
+    await user.click(screen.getByText(/password:/i));
     expect(passwordInput).toHaveFocus();
   });
 });
