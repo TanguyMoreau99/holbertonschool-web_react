@@ -9,6 +9,11 @@ class Notifications extends Component {
     this.markAsRead = this.markAsRead.bind(this);
   }
 
+  shouldComponentUpdate(nextProps) {
+    // Only update if the length of notifications has changed
+    return nextProps.notifications.length !== this.props.notifications.length;
+  }
+
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
