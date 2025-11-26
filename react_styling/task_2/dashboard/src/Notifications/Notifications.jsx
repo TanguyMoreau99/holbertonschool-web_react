@@ -24,13 +24,13 @@ class Notifications extends Component {
     };
 
     return (
-      <div className="Notifications-container">
+      <div className="Notifications-container fixed top-0 right-0 w-1/4">
         <div className="menuItem text-right p-2.5 cursor-pointer">
           <p className="m-0 font-bold">Your notifications</p>
         </div>
         {displayDrawer && (
           <div 
-            className="Notifications border-2 border-dashed p-5 relative mt-2.5 w-1/4"
+            className="Notifications border-2 border-dashed p-5 relative mt-2.5 bg-white"
             style={borderStyle}
           >
             <button
