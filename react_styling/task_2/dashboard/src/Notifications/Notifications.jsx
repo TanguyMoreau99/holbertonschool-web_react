@@ -24,13 +24,13 @@ class Notifications extends Component {
     };
 
     return (
-      <div className="Notifications-container fixed top-0 right-0 w-1/4">
+      <div className="Notifications-container absolute top-0 right-0">
         <div className="menuItem text-right p-2.5 cursor-pointer">
           <p className="m-0 font-bold">Your notifications</p>
         </div>
         {displayDrawer && (
           <div 
-            className="Notifications border-2 border-dashed p-5 relative mt-2.5 bg-white"
+            className="Notifications border-2 border-dashed p-1.5 relative w-96 bg-white"
             style={borderStyle}
           >
             <button
@@ -40,27 +40,25 @@ class Notifications extends Component {
             >
               ×
             </button>
-            <div className="p-1.5">
-              {notifications.length === 0 ? (
-                <p className="m-0 mb-2.5">No new notification for now</p>
-              ) : (
-                <>
-                  <p className="m-0 mb-2.5">Here is the list of notifications</p>
-                  <ul className="list-inside p-0 m-0 mt-2.5">
-                    {notifications.map((notification) => (
-                      <NotificationItem
-                        key={notification.id}
-                        id={notification.id}
-                        type={notification.type}
-                        value={notification.value}
-                        html={notification.html}
-                        markAsRead={this.markAsRead}
-                      />
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            {notifications.length === 0 ? (
+              <p className="m-0">No new notification for now</p>
+            ) : (
+              <>
+                <p className="m-0 mb-2.5">Here is the list of notifications</p>
+                <ul className="list-inside p-0 m-0 mt-2.5">
+                  {notifications.map((notification) => (
+                    <NotificationItem
+                      key={notification.id}
+                      id={notification.id}
+                      type={notification.type}
+                      value={notification.value}
+                      html={notification.html}
+                      markAsRead={this.markAsRead}
+                    />
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         )}
       </div>
