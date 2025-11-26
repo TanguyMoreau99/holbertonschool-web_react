@@ -4,8 +4,11 @@ function Footer() {
   };
 
   return (
-    <footer className="App-footer border-t-[3px] p-5 text-center italic fixed bottom-0 left-0 right-0 bg-white text-sm sm:text-base" style={borderStyle}>
-      <p>Copyright {new Date().getFullYear()} - Holberton School</p>
+    <footer 
+      className="App-footer absolute bottom-0 left-0 right-0 border-t-[3px] p-4 text-center italic text-sm sm:text-base bg-white" 
+      style={borderStyle}
+    >
+      <p className="m-0">Copyright {new Date().getFullYear()} - Holberton School</p>
     </footer>
   );
 }

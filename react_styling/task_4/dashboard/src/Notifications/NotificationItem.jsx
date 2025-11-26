@@ -9,7 +9,7 @@ class NotificationItem extends PureComponent {
       color: type === 'urgent' ? 'var(--urgent-notification-item)' : 'var(--default-notification-item)',
     };
     
-    const className = "text-base max-[912px]:text-xl max-[912px]:py-2.5 max-[912px]:px-0 max-[912px]:border-b max-[912px]:border-black";
+    const className = "py-2.5 px-2 text-xl border-b border-gray-900 cursor-pointer md:text-base md:py-0 md:px-0 md:border-b-0";
     
     if (html) {
       return (

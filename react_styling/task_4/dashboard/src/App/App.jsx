@@ -53,9 +53,9 @@ class App extends Component {
     return (
       <Fragment>
         <Notifications displayDrawer={displayDrawer} notifications={notificationsList} />
-        <div className="App min-h-screen flex flex-col pb-20 px-4 sm:px-6 md:px-8">
+        <div className="App relative min-h-screen pb-16">
           <Header />
-          <div className="flex-grow">
+          <main className="px-4 sm:px-6 md:px-8">
             {isLoggedIn ? (
               <BodySectionWithMarginBottom title="Course list">
                 <CourseListWithLogging courses={coursesList} />
@@ -68,7 +68,7 @@ class App extends Component {
             <BodySection title="News from the School">
               <p>ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, asperiores architecto blanditiis fuga doloribus sit illum aliquid ea distinctio minus accusantium, impedit quo voluptatibus ut magni dicta. Recusandae, quia dicta?</p>
             </BodySection>
-          </div>
+          </main>
           <Footer />
         </div>
       </Fragment>

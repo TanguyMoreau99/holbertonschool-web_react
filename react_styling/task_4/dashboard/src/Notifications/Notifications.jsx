@@ -24,28 +24,29 @@ class Notifications extends Component {
     };
 
     return (
-      <div className="Notifications-container absolute top-0 right-0 max-[912px]:fixed max-[912px]:inset-0 max-[912px]:z-50">
-        <div className="menuItem text-right p-2.5 cursor-pointer max-[912px]:hidden">
+      <>
+        <div className="menuItem fixed top-2 right-2 p-2 cursor-pointer bg-white z-40 md:static md:text-right md:p-2.5">
           <p className="m-0 font-bold">Your notifications</p>
         </div>
         {displayDrawer && (
           <div 
-            className="Notifications border-2 border-dashed p-1.5 relative w-96 bg-white max-[912px]:w-full max-[912px]:h-full max-[912px]:border-0 max-[912px]:p-3"
+            className="Notifications fixed top-0 left-0 w-full h-full bg-white z-50 p-3 overflow-y-auto
+                       md:absolute md:top-0 md:right-0 md:w-96 md:h-auto md:left-auto md:border-2 md:border-dashed md:p-1.5"
             style={borderStyle}
           >
             <button
-              className="absolute right-2.5 top-2.5 bg-transparent border-none cursor-pointer text-xl"
+              className="absolute right-2.5 top-2.5 bg-transparent border-none cursor-pointer text-2xl font-bold"
               aria-label="Close"
               onClick={() => console.log('Close button has been clicked')}
             >
               ×
             </button>
             {notifications.length === 0 ? (
-              <p className="m-0">No new notification for now</p>
+              <p className="m-0 mt-8">No new notification for now</p>
             ) : (
               <>
-                <p className="m-0 mb-2.5">Here is the list of notifications</p>
-                <ul className="list-inside p-0 m-0 mt-2.5 max-[912px]:list-none max-[912px]:p-0">
+                <p className="m-0 mb-2.5 mt-8">Here is the list of notifications</p>
+                <ul className="list-none p-0 m-0 mt-2.5">
                   {notifications.map((notification) => (
                     <NotificationItem
                       key={notification.id}
@@ -61,7 +62,7 @@ class Notifications extends Component {
             )}
           </div>
         )}
-      </div>
+      </>
     );
   }
 }
