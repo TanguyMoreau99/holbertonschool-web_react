@@ -7,7 +7,7 @@ class CourseList extends Component {
     const { courses } = this.props;
 
     return (
-      <div className="w-[90%] mx-auto my-8">
+      <div className="w-[85%] mx-auto my-10">
         <table id="CourseList" className="w-full border-collapse">
           <thead>
             <CourseListRow textFirstCell="Available courses" isHeader={true} />
