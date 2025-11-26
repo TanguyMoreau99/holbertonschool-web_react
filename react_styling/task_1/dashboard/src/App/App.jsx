@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   render() {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     
     const notificationsList = [
       { id: 1, type: 'default', value: 'New course available' },
