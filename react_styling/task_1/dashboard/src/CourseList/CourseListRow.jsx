@@ -5,32 +5,39 @@ class CourseListRow extends Component {
   render() {
     const { isHeader, textFirstCell, textSecondCell } = this.props;
     
-    const headerBgColor = 'bg-[var(--color-table-header)]';
-    const rowBgColor = 'bg-[var(--color-table-rows)]';
-    const headerOpacity = 'opacity-66';
-    const rowOpacity = 'opacity-45';
-    const borderClass = 'border border-gray-400';
+    const headerClasses = 'border border-gray-400';
+    const cellClasses = 'border border-gray-400 pl-2';
     
     if (isHeader) {
+      const headerRowStyle = {
+        backgroundColor: 'var(--color-table-header)',
+        opacity: '0.66',
+      };
+      
       if (textSecondCell === null) {
         return (
-          <tr className={`${headerBgColor} ${headerOpacity}`}>
-            <th colSpan="2" className={borderClass}>{textFirstCell}</th>
+          <tr style={headerRowStyle}>
+            <th colSpan="2" className={headerClasses}>{textFirstCell}</th>
           </tr>
         );
       } else {
         return (
-          <tr className={`${headerBgColor} ${headerOpacity}`}>
-            <th className={borderClass}>{textFirstCell}</th>
-            <th className={borderClass}>{textSecondCell}</th>
+          <tr style={headerRowStyle}>
+            <th className={headerClasses}>{textFirstCell}</th>
+            <th className={headerClasses}>{textSecondCell}</th>
           </tr>
         );
       }
     } else {
+      const dataRowStyle = {
+        backgroundColor: 'var(--color-table-rows)',
+        opacity: '0.45',
+      };
+      
       return (
-        <tr className={`${rowBgColor} ${rowOpacity}`}>
-          <td className={`${borderClass} pl-2`}>{textFirstCell}</td>
-          <td className={`${borderClass} pl-2`}>{textSecondCell}</td>
+        <tr style={dataRowStyle}>
+          <td className={cellClasses}>{textFirstCell}</td>
+          <td className={cellClasses}>{textSecondCell}</td>
         </tr>
       );
     }
