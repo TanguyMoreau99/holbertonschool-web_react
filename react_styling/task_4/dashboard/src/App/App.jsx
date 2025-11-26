@@ -35,7 +35,8 @@ class App extends Component {
   }
 
   render() {
-    const isLoggedIn = true;
+    const isLoggedIn = false;
+    const displayDrawer = false;
     
     const notificationsList = [
       { id: 1, type: 'default', value: 'New course available' },
@@ -51,7 +52,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Notifications displayDrawer={true} notifications={notificationsList} />
+        <Notifications displayDrawer={displayDrawer} notifications={notificationsList} />
         <div className="App min-h-screen flex flex-col pb-20 px-4 sm:px-6 md:px-8">
           <Header />
           <div className="flex-grow">

@@ -53,14 +53,7 @@ describe('App component', () => {
     const newsTitle = screen.getByText(/news from the school/i);
     expect(newsTitle).toBeInTheDocument();
     
-    const newsParagraph = screen.getByText(/holberton school news goes here/i);
+    const newsParagraph = screen.getByText(/ipsum lorem ipsum/i);
     expect(newsParagraph).toBeInTheDocument();
-  });
-
-  test('displays CourseList when isLoggedIn is true', () => {
-    render(<App />);
-    
-    const courseListTable = document.getElementById('CourseList');
-    expect(courseListTable).toBeInTheDocument();
   });
 });
