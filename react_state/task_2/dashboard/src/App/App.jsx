@@ -16,6 +16,12 @@ const CourseListWithLogging = WithLogging(CourseList);
 class App extends Component {
   constructor(props) {
     super(props);
+    this.logIn = this.logIn.bind(this);
+    this.logOut = this.logOut.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
+    this.handleHideDrawer = this.handleHideDrawer.bind(this);
+    
     this.state = {
       displayDrawer: false,
       user: {
@@ -23,13 +29,7 @@ class App extends Component {
         password: '',
         isLoggedIn: false,
       },
-      logOut: this.logOut.bind(this),
     };
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
-    this.logIn = this.logIn.bind(this);
-    this.logOut = this.logOut.bind(this);
   }
 
   componentDidMount() {
@@ -77,7 +77,12 @@ class App extends Component {
   }
 
   render() {
-    const { user, logOut } = this.state;
+    const { user, displayDrawer } = this.state;
+    
+    const contextValue = {
+      user,
+      logOut: this.logOut,
+    };
     
     const notificationsList = [
       { id: 1, type: 'default', value: 'New course available' },
@@ -92,10 +97,10 @@ class App extends Component {
     ];
 
     return (
-      <AppContext.Provider value={{ user, logOut }}>
+      <AppContext.Provider value={contextValue}>
         <Fragment>
           <Notifications 
-            displayDrawer={this.state.displayDrawer} 
+            displayDrawer={displayDrawer} 
             notifications={notificationsList}
             handleDisplayDrawer={this.handleDisplayDrawer}
             handleHideDrawer={this.handleHideDrawer}
