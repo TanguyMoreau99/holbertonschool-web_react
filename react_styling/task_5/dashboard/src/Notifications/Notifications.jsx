@@ -25,13 +25,12 @@ class Notifications extends Component {
 
     // Apply bounce animation when there are notifications and drawer is closed
     const shouldBounce = notifications.length > 0 && !displayDrawer;
-    const menuItemClass = shouldBounce ? 'menuItem animate-bounce' : 'menuItem';
 
     if (!displayDrawer) {
       return (
         <div className="Notifications-container">
-          <div className={menuItemClass}>
-            <p>Your notifications</p>
+          <div className="menuItem">
+            <p className={shouldBounce ? 'animate-bounce' : ''}>Your notifications</p>
           </div>
         </div>
       );
