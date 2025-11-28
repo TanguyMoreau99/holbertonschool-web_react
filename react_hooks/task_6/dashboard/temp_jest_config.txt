@@ -1,0 +1,8 @@
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^axios$": "jest-mock-axios",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
+  }
